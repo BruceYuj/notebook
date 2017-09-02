@@ -151,6 +151,8 @@ var num5 = parseInt("070"); // 56（八进制数）
 var num6 = parseInt("70"); // 70（十进制数）
 var num7 = parseInt("0xf"); // 15（十六进制数）
 ```
+==**注意**==:ECMAScript3 和5两种标准在`parseInt()`解析八进制字符串时存在分歧。因此我们在准换类似多少进制的数可以使用第二个参数
+`parseInt("0xAF", 16); // 175`
 
 ## String类型
 
