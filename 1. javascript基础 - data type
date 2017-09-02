@@ -167,8 +167,14 @@ var num6 = parseFloat("3.125e7"); //31250000
 ```
 ## String类型
 String data type表示0或多个 16-bit Unicode字符。
+![enter description here][2]
+
+我们可以使用`text.length`来返回16-bit字符的数量(但是需要注意的是，如果string中包含double-byte characters，返回值不一定精确)。
+
+
 
 ## reference
 
 
   [1]: ./images/boolean.PNG "boolean"
+  [2]: ./images/string.PNG "string"
