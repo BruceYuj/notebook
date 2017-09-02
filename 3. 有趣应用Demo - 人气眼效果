@@ -1,0 +1,24 @@
+---
+title: 3. 有趣应用Demo - 人气眼效果
+tags: Javascript
+grammar_cjkRuby: true
+---
+[toc]
+
+---
+
+
+## introduction
+![enter description here][1]
+首先，我们需要分析一下具体的实现步骤：
+1. 我们需要考虑到元素是否在可视区域内;
+2. 函数节流的使用；
+3. 
+
+
+
+## reference
+1.[学习人气眼中的效果](https://juejin.im/post/5976b1ef5188250c980304c9)
+
+
+  [1]: ./images/demo1.gif "demo1"
