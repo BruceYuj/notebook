@@ -166,14 +166,9 @@ var num5 = parseFloat("0908.5"); //908.5
 var num6 = parseFloat("3.125e7"); //31250000 
 ```
 ## String类型
-
+String data type表示0或多个 16-bit Unicode字符。
 
 ## reference
-
-4.NaN
-NaN（not a number），是一个特殊的number类型。用于表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出错误了）。
-NaN与任何值都不相等，任何涉及NaN的操作都会返回NaN。
-isNaN( )函数用于判断是否是NaN.比如“”就不是（因为其可以转为0），而“a”就是（无法转为number）。
 
 
   [1]: ./images/boolean.PNG "boolean"
