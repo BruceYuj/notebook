@@ -81,7 +81,13 @@ var floatNum1 = 3e-17; // 等于0.00000000000000003
 比如`0.1+0.2`是`0.30000000000000004`；这是所有使用IEEE754数值的浮点型计算的通病。
 
 ### Range of value
+由于内存限制，所有的number都是有范围的。
+最小值为:`Number.MIN_VALUE`-`5d-324`
+最大值为：`Number.MAX_VALUE`-`1.7976931348623157e+308`(most browser).
+任何超过这两个值的范围的都会被赋予一个特殊值：`-Infinity`或`Infinity`。
+这两个值存储在`Number.NEGATIVE_INFINITY`和`Number.POSITIVE_INFINITY`中。
 
+我们可以通过`isFinite()`来判断一个number是否是有限的。
 
 ## String类型
 
