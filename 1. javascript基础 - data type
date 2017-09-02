@@ -201,6 +201,7 @@ Objects就是一组data和functionality的集合。
 我们通常通过 new Object（）来创建一个新的对象（或者直接通过{ }字面量表示法来创建）。
 ==**注意1**==：在ECMAScript中，所有的对象都是Object类型，所有其他对象都是derived from Object type。
 
+==**注意2**==：技术角度将，ECMA-262中对象行为不一定适用于所有其他对象。比如浏览器环境中的对象，比如BOM和DOM中的对象。对于宿主对象可能不一定会继承Object。
 
 每个Object的实例都有下面的属性和方法：
  constructor：保存着用于创建当前对象的函数。对于前面的例子而言，构造函数（constructor）
