@@ -107,6 +107,10 @@ alert(isNaN("blue")); // true(不能转换成数值)
 
 ==**注意**==：`0/0;//NaN` | `1/0;//Infinity` | `-1/0;//-Infinity`
 ==**注意2**==: 对于object来讲，使用`isNaN()`方法，会先调用object的`valueOf()`看返回值是否可以转换为数值。如果不能，则基于这个返回值再调用`toString()`,再测试返回值。
+
+### Number Conversions
+
+
 ## String类型
 
 
