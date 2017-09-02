@@ -1,0 +1,97 @@
+---
+title: 1. javascript基础 - data type 
+tags: Javascript
+grammar_cjkRuby: true
+---
+[toc]
+
+---
+## introduction
+本主题主要是对javascript当中的数据类型进行一个详细的总结(本身也是对之前关于这一主题的笔记的整合)。
+
+在ECMAScript中有5中简单数据类型(also called primitive types):`Undefined/Null/Boolean/Number/String`,以及1中复杂数据类型：`Object`（Object本质上是由一组无序的键值对组成的）。
+
+我们需要注意的是，ECMAScript不支持任何创建自定义类型的机制，这也就是说，我们所知道的其他类型都是属于上述的6中类型。
+
+## typeof操作符
+我们知道ECMAScript是loosely typed，因此我们需要有一种手段来检测给定变量的数据类型，而`typeof`也就是这种作用的操作符。
+下面是该操作符可能返回的字符串：
+
+- "undefined"——如果这个值未定义；
+- "boolean"——如果这个值是布尔值；
+- "string"——如果这个值是字符串；
+- "number"——如果这个值是数值；
+- "object"——如果这个值是对象或 null；
+- "function"——如果这个值是函数。
+
+==**注意1**==: 关于`typeof null`返回的也是`"object"`，这是因为本身就是一个空对象指针。
+==**注意2**==：技术上来讲`function`本身也是一个对象，但是因为为函数有其自身的特殊性，所以在这里返回的有区分，返回的是`function`。
+==**注意3**==：在safari 5以及之前、chrome 7 以及之前，对正则表达式调用typeof操作符会返回`function`，而其他浏览器返回的是`object`。
+
+## Undefined类型
+Undefined类型只有一个值，即特殊的undefined。
+我们使用var声明变量但还没有初始化时，这个变量的值就是undefined(默认值)。
+==**注意1**==: 本身来讲，我们是不存在显示的把一个变量设置为`undefined`值的情况。而引入undefined的目的是为了正式区分空对象指针和未经初始化的变量（在第3版引入）
+```javascript
+var message; // 这个变量声明之后默认取得了 undefined 值
+// 下面这个变量并没有声明
+// var age
+alert(message); // "undefined"
+alert(age); // 产生错误
+```
+然而我们对未初始化的变量和未声明的变量使用typeof操作符，都返回undefined。（技术上不同，但是有其逻辑上的合理性）
+
+## Null类型
+该类型也只有一个值，即null。
+null值逻辑上表示空对象指针。所以typeof返回“object”。
+存在null对象的目的是如果我们定义的变量准备将来用于保存对象，我们最好将变量显式初始化为null（这是惯例）。
+实际上，`undefined`值是派生自`null`值的。
+
+## Boolean类型
+Boolean type基本属于被用到最多的一种data type(比如各种comparison、flow control等)。ECMAScript规定有两个值：`true`和`false`（case sensitive）.
+
+我们需要注意的是所有其它的data type的value都可以使用`Boolean()`来转换成对应的Boolean type(而在if flow control中会自动conversion)。
+![enter description here][1]
+
+## Number类型
+在ECMAScript当中，我们使用IEEE-754 format来表示integers和floating-point values（双精度型值）。对于整数来讲，我们可以在==非严格模式下==使用不同的进制法(8进制和16进制)，看下面代码：
+```javascript
+var intNum = 55; // integer,10进制 55
+var octalNum1 = 070; // octal for 56
+var octalNum2 = 079; // invalid octal - interpreted as 79
+
+var hexNum1 = 0xA; // hexadecimal for 10
+```
+8进制以0开头；16进制以0x开头。
+
+==**注意1**==：考虑到JavaScript的number类型存储方式，可能会出现`-0`和`+0`,但是两者是相等的。
+
+### Floating-Point Values
+在内存中，floating-point values使用的空间是integer的两倍；因此，ECMAScript会将某些不必要的值转换为integer或e-notation。
+- 如果小数点后面没有跟任何数字(如1.0),会将该值转换为integer
+
+有些时候，我们的值会非常的大或非常的小，这个是时候使用e-notation就非常的方便。
+```javascript
+var floatNum = 3.125e7; // 等于31250000
+var floatNum1 = 3e-17; // 等于0.00000000000000003
+```
+- 在默认情况下，ECMAScript会将小数点后面带6个0以上的浮点数转换为e-notation。
+
+我们知道浮点数的最高精度为17位小数，但是在进行算术计算时其精确度远远不如整数，会出现误差。
+比如`0.1+0.2`是`0.30000000000000004`；这是所有使用IEEE754数值的浮点型计算的通病。
+
+### Range of value
+
+
+## String类型
+
+
+## reference
+
+4.NaN
+NaN（not a number），是一个特殊的number类型。用于表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出错误了）。
+NaN与任何值都不相等，任何涉及NaN的操作都会返回NaN。
+isNaN( )函数用于判断是否是NaN.比如“”就不是（因为其可以转为0），而“a”就是（无法转为number）。
+
+
+  [1]: ./images/boolean.PNG "boolean"
