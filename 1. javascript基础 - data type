@@ -114,6 +114,26 @@ alert(isNaN("blue")); // true(不能转换成数值)
 - parseInt(): converting strings to numbers
 - parseFloat(): converting strings to numbers
 
+#### Number()函数
+基本rules：
+1. 对于Boolean values， `true` 和`false`分别转换成`1` and `0`.
+2. 如果是number类型，则只是简单的传入与返回
+3. 如果是`null`, 返回`0`
+4. 如果是`undefined`, 返回`NaN`
+5. 如果是strings：
+    - string当中只有数字(包括前面带正负号的情况)，则将其转换成10进制
+    - 如果字符串包含有效的float格式(1.1)，则转成对应浮点数型。
+    - 如果包含有效16进制格式，转换成相同大小10进制数值。
+    - 如果是空字符串，转换成0
+    - 如果是其他类型的字符串，返回`NaN`。
+6. 如果是object，正如之前所说的，先调用`valueOf()`，按照前面规则转换，如果结果是`NaN`,则调用`toString()`方法，再转换。
+```javascript
+var num1 = Number("Hello world!"); //NaN 
+var num2 = Number(""); //0 
+var num3 = Number("000011"); //11 
+var num4 = Number(true); //1 
+```
+
 ## String类型
 
 
