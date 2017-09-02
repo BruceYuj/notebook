@@ -1,0 +1,27 @@
+---
+title: 1. javascript基础 - Variables, Scope, and Memory
+tags: Javascript
+grammar_cjkRuby: true
+---
+[toc]
+
+---
+## introduction
+我们知道，ECMA-262中关于variables的定义和Java这种强类型语言不一样。在javascript当中,一个variable只是一个语义上的name(an identifier)(在特定时期会表示特定的值)，也就是所谓的loosely typed。这也就是说，我们可以在脚本的整个生命周期修改variable's value and data type.
+
+在这一个主题中，我们需要理解下面这些问题：
+1. Javascript中，primitive and reference values in variables有什么区别？
+2. 什么是 execution context？
+3. javascript中的garbage collection？
+
+## Variables
+我们声明一个新的变量，该变量会首先被初始化为`undefined`。
+```javascript
+var a;
+console.log(a); // undefined
+```
+
+http://blog.csdn.net/haoaiqian/article/details/72834542
+## reference
+1.[Professional Javascript第四章]
+2.
