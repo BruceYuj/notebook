@@ -89,6 +89,8 @@ var floatNum1 = 3e-17; // 等于0.00000000000000003
 
 我们可以通过`isFinite()`来判断一个number是否是有限的。
 
+### NaN
+
 ## String类型
 
 
