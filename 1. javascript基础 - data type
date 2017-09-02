@@ -91,6 +91,21 @@ var floatNum1 = 3e-17; // 等于0.00000000000000003
 
 ### NaN
 NaN是一个特殊的Number类型值:`Not a Number`.
+这个value的用途是当一个operation返回a number has failed（在其他语言中会throwing an error）。
+- 任何涉及到NaN的操作都会返回NaN(比如`NaN/10`)
+- NaN和任何值都不相等(包括自己)。
+
+因此，ECMAscript提供了`isNaN()`方法来帮助我们确定某个value是否是number。
+该函数在接收到不是number时会尝试将其转换成字符：
+```javascript
+alert(isNaN(NaN)); // true
+alert(isNaN(10)); // false
+alert(isNaN("10")); // false
+alert(isNaN("blue")); // true(不能转换成数值)
+
+```
+
+==**注意**==：`0/0;//NaN` | `1/0;//Infinity` | `-1/0;//-Infinity`
 ## String类型
 
 
