@@ -134,7 +134,23 @@ var num3 = Number("000011"); //11
 var num4 = Number(true); //1 
 ```
 #### parseInt()和parseFloat()
-
+`parseInt()`在转换之前，首先找到第一个非空格字符。
+如果该字符不是数字字符或者正负号，则返回`NaN`(意味着空字符串返回NaN);
+继续往后面解析，知道结束或者遇到非数字字符：
+```javascript
+parseInt("123blue"); // 123
+parseInt("22.5"); // 22
+```
+对应的`parseInt()`也能够识别出各种整数格式:
+```javascript
+var num1 = parseInt("1234blue"); // 1234 
+var num2 = parseInt(""); // NaN 
+var num3 = parseInt("0xA"); // 10（十六进制数）
+var num4 = parseInt(22.5); // 22 
+var num5 = parseInt("070"); // 56（八进制数）
+var num6 = parseInt("70"); // 70（十进制数）
+var num7 = parseInt("0xf"); // 15（十六进制数）
+```
 
 ## String类型
 
