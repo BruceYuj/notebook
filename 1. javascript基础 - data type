@@ -154,6 +154,17 @@ var num7 = parseInt("0xf"); // 15（十六进制数）
 ==**注意**==:ECMAScript3 和5两种标准在`parseInt()`解析八进制字符串时存在分歧。因此我们在准换类似多少进制的数可以使用第二个参数
 `parseInt("0xAF", 16); // 175`
 
+
+`parseFloat()`解析方式类似，遇到第一个无效的浮点数格式的字符停止。
+该函数还会忽略前导0.该函数也只解析10进制。
+```javascript
+var num1 = parseFloat("1234blue"); //1234 （整数）
+var num2 = parseFloat("0xA"); //0 
+var num3 = parseFloat("22.5"); //22.5 
+var num4 = parseFloat("22.34.5"); //22.34 
+var num5 = parseFloat("0908.5"); //908.5 
+var num6 = parseFloat("3.125e7"); //31250000 
+```
 ## String类型
 
 
