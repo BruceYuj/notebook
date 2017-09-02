@@ -196,6 +196,8 @@ alert(num.toString(16)); // "a"
 - 如果值是 null，则返回"null"；
 - 如果值是 undefined，则返回"undefined"
 
+## Object类型
+
 
 ## reference
 
